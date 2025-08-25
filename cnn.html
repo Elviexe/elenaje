@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>卷積神經網路影像辨識專題</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fi-icons@latest/css/fi.css">
+
+<style>
+  body {
+    background-color: #f5f3f0;
+    font-family: "Noto Sans TC", sans-serif;
+    color: #3c3c3c;
+  }
+
+  /* Navbar */
+  .navbar {
+    background-color: #1C2E4A;
+
+  }
+  .navbar .navbar-brand {
+    color: #f5f3f0;
+    font-weight: bold;
+  }
+
+  /* Header */
+  .project-header {
+    background-color: #67799d;
+    color: #f5f3f0;
+    padding: 50px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .project-header h2 {
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  /* 區塊卡片 */
+  .section-card {
+    background-color: #ffffff;
+    padding: 25px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+  }
+
+  /* 區塊標題 */
+  .section-card h4 {
+    margin-bottom: 15px;
+    color: #67799d; 
+  }
+
+  /* 圖片置中 */
+  .section-card img {
+    display: block;
+    margin: 15px auto 0 auto;
+    max-width: 100%;
+  }
+
+  /* 按鈕 */
+  .btn-primary {
+    background-color: #67799d;
+    border: none;
+    color: #f5f3f0;
+  }
+  .btn-primary:hover {
+    background-color: #55607A;
+    transform: scale(1.05);
+    transition: all 0.3s ease;  }
+    .section-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+    }
+
+  /* Footer */
+  footer {
+    background-color: #1C2E4A;
+    color: #f5f3f0;
+    padding: 20px 0;
+    text-align: center;
+  }
+  footer a {
+    color: #f5f3f0;
+    text-decoration: none;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+      <a class="navbar-brand" href="index.html">
+  <i class="fas fa-home" style="margin-right:8px;"></i>專題作品展示
+    </a>
+  </div>
+</nav>
+
+<!-- Header -->
+<section class="project-header">
+  <h2>
+   <i class="fa-solid fa-camera" style="margin-right:8px;"></i>
+    
+    卷積神經網路影像辨識專題</h2>
+    <p class="course-name"><strong>課程：</strong>延伸標記語言</p>
+
+  <p>成功建置 CNN 模型，對 CIFAR-10 影像資料進行分類。實作包括 Baseline 模型、Dropout、Batch Normalization 與 SE Attention 模組，並產生訓練準確率與損失變化曲線，清楚呈現模型訓練與預測表現。
+</p>
+</section>
+
+<!-- 技術與工具 -->
+<section class="container">
+  <div class="section-card">
+    <h4>
+    <i class="fa-solid fa-wrench" style="margin-right:8px;"></i>        
+    技術與工具</h4>
+    <ul>
+    <li><strong>PyTorch：</strong>深度學習框架，實作 CNN 模型</li>
+    <li><strong>卷積神經網路 (CNN)：</strong>提取圖像特徵，進行分類</li>
+    <li><strong>Dropout：</strong>避免過擬合，提高模型泛化能力</li>
+    <li><strong>Batch Normalization：</strong>加速收斂，穩定訓練</li>
+    <li><strong>SE Attention 模組：</strong>強化重要特徵，提高辨識能力</li>
+    <li><strong>CIFAR-10 資料集：</strong>圖像分類訓練與測試</li>
+  </ul>
+</div>
+
+  <!-- 專題成果 -->
+  <div class="section-card">
+  <h4><i class="fa-solid fa-chart-line" style="margin-right:8px;"></i>專題成果</h4>
+  <ul>
+    <li>成功建立 CNN 模型，對 CIFAR-10 影像資料進行分類</li>
+    <li>各種實驗結果：
+      <ul>
+        <li>Baseline CNN：66.3%</li>
+        <li>Baseline + Dropout：78.1%</li>
+        <li>Baseline + BatchNorm：78.2%</li>
+        <li>Dropout + BatchNorm：77.4%</li>
+        <li>Baseline + Attention：77.9%</li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="accordion" id="cnnResultsAccordion">
+
+    <!-- Baseline -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingBaseline">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBaseline" aria-expanded="false" aria-controls="collapseBaseline">
+          Baseline CNN (66.3%)
+        </button>
+      </h2>
+      <div id="collapseBaseline" class="accordion-collapse collapse" aria-labelledby="headingBaseline" data-bs-parent="#cnnResultsAccordion">
+        <div class="accordion-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="xml/baseline/output01a.png" class="img-fluid" alt="Baseline Accuracy">
+              <p class="text-center mt-2">準確率曲線</p>
+            </div>
+            <div class="col-md-6">
+              <img src="xml/atten/output_lo1.png" class="img-fluid" alt="Baseline Loss">
+              <p class="text-center mt-2">損失變化曲線</p>
+            </div>
+          </div>
+          <p>設計說明：四層卷積 + 全連接層，Baseline 模型用來建立基準準確率。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dropout -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingDropout">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDropout" aria-expanded="false" aria-controls="collapseDropout">
+          Baseline + Dropout (78.1%)
+        </button>
+      </h2>
+      <div id="collapseDropout" class="accordion-collapse collapse" aria-labelledby="headingDropout" data-bs-parent="#cnnResultsAccordion">
+        <div class="accordion-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="xml/output_drop_acc.png" class="img-fluid" alt="Dropout Accuracy">
+              <p class="text-center mt-2">準確率曲線</p>
+            </div>
+            <div class="col-md-6">
+              <img src="xml/output_drop_loss.png" class="img-fluid" alt="Dropout Loss">
+              <p class="text-center mt-2">損失變化曲線</p>
+            </div>
+          </div>
+          <p>設計說明：在全連接層加入 Dropout 隨機丟棄神經元，減少過擬合，提高泛化能力。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BatchNorm -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingBatchNorm">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBatchNorm" aria-expanded="false" aria-controls="collapseBatchNorm">
+          Baseline + BatchNorm (78.2%)
+        </button>
+      </h2>
+      <div id="collapseBatchNorm" class="accordion-collapse collapse" aria-labelledby="headingBatchNorm" data-bs-parent="#cnnResultsAccordion">
+        <div class="accordion-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="xml/bn_acc.png" class="img-fluid" alt="BatchNorm Accuracy">
+              <p class="text-center mt-2">準確率曲線</p>
+            </div>
+            <div class="col-md-6">
+              <img src="xml/bn_loss.png" class="img-fluid" alt="BatchNorm Loss">
+              <p class="text-center mt-2">損失變化曲線</p>
+            </div>
+          </div>
+          <p>設計說明：在卷積層後加入 Batch Normalization，加速收斂並穩定訓練。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dropout + BatchNorm -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingDropBn">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDropBn" aria-expanded="false" aria-controls="collapseDropBn">
+          Dropout + BatchNorm (77.4%)
+        </button>
+      </h2>
+      <div id="collapseDropBn" class="accordion-collapse collapse" aria-labelledby="headingDropBn" data-bs-parent="#cnnResultsAccordion">
+        <div class="accordion-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="xml/db_acc.png" class="img-fluid" alt="Dropout+BN Accuracy">
+              <p class="text-center mt-2">準確率曲線</p>
+            </div>
+            <div class="col-md-6">
+              <img src="xml/db_loss.png" class="img-fluid" alt="Dropout+BN Loss">
+              <p class="text-center mt-2">損失變化曲線</p>
+            </div>
+          </div>
+          <p>設計說明：結合 Dropout 與 BatchNorm，兼顧泛化能力與訓練穩定性。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Attention -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingAttention">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAttention" aria-expanded="false" aria-controls="collapseAttention">
+          Baseline + Attention (77.9%)
+        </button>
+      </h2>
+      <div id="collapseAttention" class="accordion-collapse collapse" aria-labelledby="headingAttention" data-bs-parent="#cnnResultsAccordion">
+        <div class="accordion-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="xml/atten/output_ac1.png" class="img-fluid" alt="Attention Accuracy">
+              <p class="text-center mt-2">準確率曲線</p>
+            </div>
+            <div class="col-md-6">
+              <img src="xml/atten/output_lo1.png" class="img-fluid" alt="Attention Loss">
+              <p class="text-center mt-2">損失變化曲線</p>
+            </div>
+          </div>
+          <p>設計說明：加入 SE Attention 模組，強化重要特徵，提高辨識能力。</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <!-- 操作說明 -->
+  <div class="section-card">
+    <h4>
+    <i class="fa-solid fa-circle-info" style="margin-right:8px;"></i>        
+    操作說明</h4>
+   <ul>
+    <li>將 CIFAR-10 資料集載入程式中</li>
+    <li>執行不同 CNN 模型訓練程式（Baseline、Dropout、BatchNorm 等）</li>
+    <li>記錄訓練準確率與損失曲線</li>
+    <li>測試模型對測試集的分類準確度</li>
+  </ul>
+</div>
+
+  <!-- 回首頁 -->
+  <div class="text-center mb-4">
+    <a href="index.html" class="btn btn-primary btn-lg">回首頁</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>聯絡方式：elenaje0705@gmail.com</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

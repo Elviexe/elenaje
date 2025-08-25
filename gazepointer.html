@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智慧眼睛手勢復健辨識系統</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fi-icons@latest/css/fi.css">
+
+
+<style>
+  body {
+    background-color: #f5f3f0;
+    font-family: "Noto Sans TC", sans-serif;
+    color: #3c3c3c;
+  }
+
+  /* Navbar */
+  .navbar {
+    background-color: #1C2E4A;
+
+  }
+  .navbar .navbar-brand {
+    color: #f5f3f0;
+    font-weight: bold;
+  }
+
+  /* Header */
+  .project-header {
+    background-color: #67799d;
+    color: #f5f3f0;
+    padding: 50px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .project-header h2 {
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  /* 區塊卡片 */
+  .section-card {
+    background-color: #ffffff;
+    padding: 25px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+  }
+
+  /* 區塊標題 */
+  .section-card h4 {
+    margin-bottom: 15px;
+    color: #67799d; 
+  }
+
+  /* 圖片置中 */
+  .section-card img {
+    display: block;
+    margin: 15px auto 0 auto;
+    max-width: 100%;
+  }
+
+  /* 按鈕 */
+  .btn-primary {
+    background-color: #67799d;
+    border: none;
+    color: #f5f3f0;
+  }
+  .btn-primary:hover {
+    background-color: #55607A;
+    transform: scale(1.05);
+    transition: all 0.3s ease;  }
+    .section-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+    }
+
+  /* Footer */
+  footer {
+    background-color: #1C2E4A;
+    color: #f5f3f0;
+    padding: 20px 0;
+    text-align: center;
+  }
+  footer a {
+    color: #f5f3f0;
+    text-decoration: none;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+      <a class="navbar-brand" href="index.html">
+  <i class="fas fa-home" style="margin-right:8px;"></i>專題作品展示
+    </a>
+  </div>
+</nav>
+
+<!-- Header -->
+<section class="project-header">
+<h2>
+  <i class="fa-solid fa-hand-pointer" style="margin-right:8px;"></i>
+  智慧眼睛手勢復健辨識系統
+</h2>
+
+<p>結合 Gazepointer 與手勢遊戲，輔助手部復健訓練</p>
+</section>
+
+<!-- 技術與工具 -->
+<section class="container">
+  <div class="section-card">
+    <h4>
+    <i class="fa-solid fa-wrench" style="margin-right:8px;"></i>
+    技術與工具
+    </h4>
+
+    <p>Python, Mediapipe, OpenCV,Pyautogui</strong>，完成影像辨識、手勢和眼睛控制功能。</p>
+  </div>
+
+  <!-- 專題成果 -->
+  <div class="section-card">
+  <h4>
+    <i class="fa-solid fa-code-branch"  style="margin-right:8px;"></i>
+    專題成果
+  </h4>
+    <p>透過電腦內建攝影機擷取手部動作，使用 Mediapipe 偵測手勢，再結合 Gazepointer 介面結合眼球控制進行復健遊戲。</p>
+   
+  </div>
+
+  <!-- 操作說明 -->
+  <div class="section-card">
+    <h4>
+    <i class="fa-solid fa-circle-info" style="margin-right:8px;"></i>
+    操作說明
+    </h4>
+
+    <p>使用者透過攝影機對準手部，即可控制遊戲中的指標與互動元素，完成復健動作練習。</p>
+  </div>
+
+
+
+<div class="section-card">
+  <h4>
+    <i class="fa-solid fa-photo-video" style="margin-right:8px;"></i>
+    影片和圖片展示
+  </h4>
+
+  <div class="row">
+    <!-- 左邊影片 -->
+    <div class="col-md-6 mb-3 text-center">
+      <video controls class="project-media">
+        <source src="gaze_video.mp4" type="video/mp4">
+        您的瀏覽器不支援影片播放。
+      </video>
+      <p class="mt-2">操作影片</p>
+    </div>
+
+    <!-- 右邊圖片 -->
+    <div class="col-md-6 text-center">
+      <img src="gazepointer01.png" alt="示範圖片1" class="project-media mb-3">
+      <p class="mt-2">示範圖片</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.project-media {
+  max-width: 100%;
+  max-height: 400px; /* 可依需要調整 */
+  object-fit: contain; /* 讓直式影片或圖片保持比例，不變形 */
+}
+
+</style>
+
+
+  <!-- 回首頁 -->
+  <div class="text-center mb-4">
+    <a href="index.html" class="btn btn-primary btn-lg">回首頁</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>聯絡方式：elenaje0705@gmail.com</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

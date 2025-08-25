@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8051 生日慶祝機</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fi-icons@latest/css/fi.css">
+
+<style>
+  body {
+    background-color: #f5f3f0;
+    font-family: "Noto Sans TC", sans-serif;
+    color: #3c3c3c;
+  }
+
+  /* Navbar */
+  .navbar {
+    background-color: #1C2E4A;
+
+  }
+  .navbar .navbar-brand {
+    color: #f5f3f0;
+    font-weight: bold;
+  }
+
+  /* Header */
+  .project-header {
+    background-color: #67799d;
+    color: #f5f3f0;
+    padding: 50px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .project-header h2 {
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  /* 區塊卡片 */
+  .section-card {
+    background-color: #ffffff;
+    padding: 25px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+  }
+
+  /* 區塊標題 */
+  .section-card h4 {
+    margin-bottom: 15px;
+    color: #67799d; 
+  }
+
+  /* 圖片置中 */
+  .section-card img {
+    display: block;
+    margin: 15px auto 0 auto;
+    max-width: 100%;
+  }
+
+  /* 按鈕 */
+  .btn-primary {
+    background-color: #67799d;
+    border: none;
+    color: #f5f3f0;
+  }
+  .btn-primary:hover {
+    background-color: #55607A;
+    transform: scale(1.05);
+    transition: all 0.3s ease;  }
+    .section-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+    }
+  /* Footer */
+  footer {
+    background-color: #1C2E4A;
+    color: #f5f3f0;
+    padding: 20px 0;
+    text-align: center;
+  }
+  footer a {
+    color: #f5f3f0;
+    text-decoration: none;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+      <a class="navbar-brand" href="index.html">
+  <i class="fas fa-home" style="margin-right:8px;"></i>專題作品展示
+    </a>
+  </div>
+</nav>
+
+<!-- Header -->
+<section class="project-header">
+<h2>
+<i class="fa-solid fa-cake-candles" style="margin-right:8px;"></i>
+8051 生日慶祝機
+</h2>
+
+<p class="course-name"><strong>課程：</strong>組合語言專題</p>
+<p>使用Assembly在8051開發板上完成控制功能</p>
+</section>
+
+<!-- 技術與工具 -->
+<section class="container">
+<div class="section-card">
+    <h4>
+    <i class="fa-solid fa-wrench" style="margin-right:8px;"></i>    
+    技術與工具</h4>
+    <p>Assembly language，8051開發版</p>
+  </div>
+
+  <!-- 專題成果 -->
+  <div class="section-card">
+    <h4>
+    <i class="fa-solid fa-code-branch"  style="margin-right:8px;"></i>
+    專題成果</h4>
+    <p>透過 8051 開發板控制 LCD 顯示及播放生日快樂歌。按鍵可切換不同模式，例如播放音樂、顯示圖案和出現"Happy birthday"</p>
+
+  </div>
+
+  <!-- 操作說明 -->
+  <div class="section-card">
+    <h4>
+    <i class="fa-solid fa-circle-info" style="margin-right:8px;"></i>
+        
+    操作說明</h4>
+     <ol>
+    <li>接通 8051 開發板電源，LED 與按鍵連線。</li>
+    <li>按下模式切換按鍵，依序切換不同功能：
+      <ul>
+        <li>模式 1：LCD螢幕顯示"Happy birthday"</li>
+        <li>模式 2：圖案顯示生日蛋糕、笑臉、愛心圖案</li>
+        <li>模式 3：播放生日快樂歌</li>
+      </ul>
+    </li>
+  </div>
+
+
+<div class="section-card">
+  <h4>
+    <i class="fa-solid fa-photo-video" style="margin-right:8px;"></i>
+    影片和圖片展示
+  </h4>
+
+  <div class="row">
+    <!-- 左邊影片 -->
+    <div class="col-md-6 mb-3 text-center">
+      <video controls class="project-media">
+        <source src="8051_video.mp4" type="video/mp4">
+        您的瀏覽器不支援影片播放。
+      </video>
+      <p class="mt-2">操作影片</p>
+    </div>
+
+    <!-- 右邊圖片 -->
+    <div class="col-md-6 text-center">
+      <img src="8051_01.jpg" alt="示範圖片1" class="project-media mb-3">
+      <p class="mt-2">示範圖片</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.project-media {
+  max-width: 100%;
+  max-height: 400px; /* 可依需要調整 */
+  object-fit: contain; /* 讓直式影片或圖片保持比例，不變形 */
+}
+
+</style>
+
+
+  <!-- 回首頁 -->
+  <div class="text-center mb-4">
+    <a href="index.html" class="btn btn-primary btn-lg">回首頁</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>聯絡方式：elenaje0705@gmail.com</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
