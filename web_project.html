@@ -139,6 +139,43 @@
     <p>使用者可先註冊帳號並登入系統，進入後可依權限瀏覽或管理藝人資料。管理者可新增、修改或刪除藝人資料；一般使用者則可進行藝人資訊查詢與瀏覽。</p>
   </div>
 
+
+<div class="section-card">
+  <h4>
+    <i class="fa-solid fa-photo-video" style="margin-right:8px;"></i>
+    影片和圖片展示
+  </h4>
+
+  <div class="row">
+    <!-- 左邊影片 -->
+    <div class="col-md-6 mb-3 text-center">
+      <video controls class="project-media">
+        <source src="8051_video.mp4" type="video/mp4">
+        您的瀏覽器不支援影片播放。
+      </video>
+      <p class="mt-2">操作影片</p>
+    </div>
+
+    <!-- 右邊圖片 -->
+    <div class="col-md-6 text-center">
+      <img src="8051_01.jpg" alt="示範圖片1" class="project-media mb-3">
+      <p class="mt-2">示範圖片</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.project-media {
+  max-width: 100%;
+  max-height: 400px; /* 可依需要調整 */
+  object-fit: contain; /* 讓直式影片或圖片保持比例，不變形 */
+}
+
+</style>
+
+
+
+
   <!-- 回首頁 -->
   <div class="text-center mb-4">
     <a href="index.html" class="btn btn-primary btn-lg">回首頁</a>
