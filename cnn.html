@@ -90,7 +90,17 @@
     text-decoration: underline;
   }
 </style>
-  <script defer data-domain="elviexe.github.io" src="https://plausible.io/js/script.js"></script>
+<script>
+  // 檢查是否有管理員 cookie
+  if (document.cookie.indexOf("is_admin=true") === -1) {
+    // 如果不是管理員，才載入 Plausible
+    var s = document.createElement("script");
+    s.defer = true;
+    s.setAttribute("data-domain", "elviexe.github.io");
+    s.src = "https://plausible.io/js/script.js";
+    document.head.appendChild(s);
+  }
+</script>
 
 </head>
 <body>
